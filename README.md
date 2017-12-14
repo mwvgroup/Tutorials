@@ -4,5 +4,5 @@ This repository provides tutorials on common tasks within the MWV research group
 
 ## Contents
 
-1. [Reading Tables]() : How to read and manipulate basic data tables using `astropy`
-1. [Photometry Introduction]() : How to perform aperture photometry in Python
+1. [Reading Tables](https://github.com/mwvgroup/Python-Tutorials/blob/master/reading_tables/tables_tutorial.ipynb) : How to read and manipulate basic data tables using `astropy`
+1. [Photometry Introduction](https://github.com/mwvgroup/Python-Tutorials/blob/master/photometry_introduction/photometry_tutorial.ipynb) : How to perform aperture photometry in Python
