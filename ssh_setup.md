@@ -65,7 +65,7 @@ Since setting up an SSH connection requires some overhead, SSH has the ability t
 
 ## Setting up autocomplete
 
-We can setup the `ssh` command to autocomplete the server data stored in `/.ssh/config`. To do so, create a new file in your home directory called `.autocomplete.sh`.
+We can setup the `ssh` command to autocomplete the server data stored in `~/.ssh/config`. To do so, create a new file in your home directory called `~/.autocomplete.sh`.
 
 ```bash
 % touch .autocomplete.sh
@@ -81,13 +81,27 @@ function _ssh_completion() {
 complete -W "$(_ssh_completion)" ssh
 ```
 
-Then In your .bashrc (linux) or .bash_profile (macOS) file, add this line:
+Then In your `~/.bashrc` (linux) or `~/.bash_profile` (macOS) file, add this line:
 
 ```bash
 source $HOME/.autocomplete.sh 
 ```
 
 
+
+#### Trouble Shooting
+
+If you have completed the above and the autocomplete feature try the following steps:
+
+1. Quit and resetart your command line interface. This will load the changes you made to `.bashrc`  or `.bash_profile`.
+
+2. Make sure you have the `complete` command installed by running 
+
+   ```bash
+   brew install bash-completion
+   ```
+
+   
 
 ## SSH Keys
 
@@ -167,6 +181,20 @@ You can now use the commands `remotemount zeus` and `uremotemout zeus` to mount 
 
 ```bash
 remotemout zeus \some\other\dir
+```
+
+
+
+We can setup the `remotemount` and `uremotemount` commands to autocomplete just like the `ssh` command. To do so, we edit the `~/.autocomplete.sh` file so that it looks like the following
+
+```bash
+# SSH
+function _ssh_completion() {
+    egrep -o '^Host [a-zA-Z]+' $HOME/.ssh/config | awk '{ print $2 }'
+}
+complete -W "$(_ssh_completion)" ssh
+complete -W "$(_ssh_completion)" remotemount
+complete -W "$(_ssh_completion)" uremotemount
 ```
 
 
