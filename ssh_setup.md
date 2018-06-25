@@ -14,7 +14,7 @@ A secure shell (SSH) is a network protocol that provides an easy but secure way 
 
 For convenience (and added security), we will discuss the use of authentication keys, autocomplete, and remote file mounting. Note that all code snippets in this document will assume you are starting from your home directory.
 
-
+**Note:** In order to connect to a University of Pittsburgh server over SSH you will need to install and use the University's VPN service. For more information see [technology.pitt.edu](http://technology.pitt.edu/services/pitt-vpn-secure-remote-access).
 
 ## SSH Config File
 
