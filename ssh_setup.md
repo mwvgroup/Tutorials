@@ -113,7 +113,7 @@ We will be generating keys using the RSA algorithm with 4096 bits. At present, t
 % cd .ssh
 % ssh-keygen -t rsa -b 4096
 % Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/demitri/.ssh/id_rsa): zeus_rsa_4096
+Enter file in which to save the key (/Users/mattsmith/.ssh/id_rsa): zeus_rsa_4096
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 
@@ -161,7 +161,7 @@ In the following example, we setup SSHFS to mount remote file systems to the loc
 
 
 
-First install FUSE for macOS & SSHFS from [http://osxfuse.github.io](http://osxfuse.github.io). **Make sure to have the  “compatibility layer” option checked. ** Then add the following functions to your `.bash_profile` file:
+First install FUSE for macOS & SSHFS from [http://osxfuse.github.io](http://osxfuse.github.io). **Make sure to have the  “compatibility layer” option checked.** Then add the following functions to your `.bash_profile` file:
 
 ```bash
 source $HOME/.autocomplete.sh
