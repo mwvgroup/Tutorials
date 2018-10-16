@@ -1,6 +1,6 @@
 # Setting up SSH and Remote Mounting
 
-Written by Daniel Perrefort. Inspired by a presentation from Demitri Muna.
+Inspired by a presentation from Demitri Muna.
 
 
 
