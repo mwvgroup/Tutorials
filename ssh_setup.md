@@ -217,30 +217,18 @@ For the install to complete, log out and then log back in. Then create the direc
 % sudo chown <your username>:fuse /mnt/sshfs 
 ```
 
-If your account name on the remote server `ZEUS.IMAGINARY.UNIVERSITY.EDU` is `mattsmith`, you can mount your home directory on Zeus to your local home directory using
+Then add the following functions to your `.bash_profile` file. These work exactly the same as the Mac example above, but are tailored slightly to run on Linux machines:
 
 ```
-% sudo sshfs mattsmith@ZEUS.IMAGINARY.UNIVERSITY.EDU: /mnt/sshfs/zeus
+source $HOME/.autocomplete.sh 
+remotemount () {
+    umount /mnt/sshfs/$1 >/dev/null 2>&1
+    if ! [ -d /mnt/sshfs/$1 ]
+    then
+        mkdir /mnt/sshfs/$1
+    fi
+    sshfs -o nonempty $1:$2 /mnt/sshfs/$1
+}
+
+uremotemount () { umount /mnt/sshfs/$1; }
 ```
-
-To mount a different remote directory, run
-
-```bash
-% sudo sshfs mattsmith@ZEUS.IMAGINARY.UNIVERSITY.EDU:/some/other/dir /mnt/sshfs/zeus
-```
-
-To unmount the remote drive use the `fusermount` command.
-
-```bash
-% sudo fusermount -u /mnt/sshfs/zeus  
-```
-
-You can also create aliases to make this simpler for commonly used hosts.
-
-```
-# zeus
-alias mount_astro="sudo sshfs mattsmith@ZEUS.IMAGINARY.UNIVERSITY.EDU: /mnt/sshfs/zeus"
-alias unmount_astro="sudo fusermount -u /mnt/sshfs/zeus  "
-```
-
-
