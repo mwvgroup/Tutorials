@@ -219,7 +219,7 @@ For the install to complete, log out and then log back in. Then create the direc
 
 Then add the following functions to your `.bash_profile` file. These work exactly the same as the Mac example above, but are tailored slightly to run on Linux machines:
 
-```
+```bash
 source $HOME/.autocomplete.sh 
 remotemount () {
     umount /mnt/sshfs/$1 >/dev/null 2>&1
