@@ -205,7 +205,6 @@ First you will need to install fuse and sshfs.
 
 ```bash
 % sudo apt-get install fuse
-% sudp 
 % sudo apt-get install sshfs
 % sudo adduser <your username> fuse 
 ```
